@@ -33,8 +33,8 @@ namespace BFGCoffeeShop.Data
             return new ApplicationDbContext();
         }
 
-        //public DbSet<Menu> Menus { get; set; }
-        //comment
+        public DbSet<CoffeeOrder> CoffeeOrders { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
