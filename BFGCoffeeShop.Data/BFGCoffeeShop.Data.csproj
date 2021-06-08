@@ -85,7 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeOrder.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Addition.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

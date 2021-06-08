@@ -55,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeOrderService.cs" />
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="AdditionService.cs" />
+    <Compile Include="MenuService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
