@@ -58,6 +58,14 @@
     <Compile Include="CustomerModels\CustomerDetails.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerList.cs" />
+    <Compile Include="AdditionModel\AdditionCreate.cs" />
+    <Compile Include="AdditionModel\AdditionDetail.cs" />
+    <Compile Include="AdditionModel\AdditionEdit.cs" />
+    <Compile Include="AdditionModel\AdditionItemList.cs" />
+    <Compile Include="MenuModels\MenuCreate.cs" />
+    <Compile Include="MenuModels\MenuDetail.cs" />
+    <Compile Include="MenuModels\MenuEdit.cs" />
+    <Compile Include="MenuModels\MenuListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
