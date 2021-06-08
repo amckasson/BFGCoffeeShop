@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BFG_CoffeeShop.Models.AdditionModels
+namespace BFGCoffeeShop.Models.AdditionModels
 {
     public class AdditionCreate
     {

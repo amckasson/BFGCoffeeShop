@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BFG_CoffeeShop.Data
+namespace BFGCoffeeShop.Data
 {
     public class Addition
     {
