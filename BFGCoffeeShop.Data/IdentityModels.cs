@@ -34,6 +34,7 @@ namespace BFGCoffeeShop.Data
         }
 
         //public DbSet<Menu> Menus { get; set; }
+        //comment
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
