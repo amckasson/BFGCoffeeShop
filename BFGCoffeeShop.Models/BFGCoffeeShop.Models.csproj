@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeOrderModels\CoffeeOrderCreate.cs" />
+    <Compile Include="CoffeeOrderModels\CoffeeOrderDetail.cs" />
+    <Compile Include="CoffeeOrderModels\CoffeeOrderEdit.cs" />
+    <Compile Include="CoffeeOrderModels\CoffeeOrderListItem.cs" />
     <Compile Include="CustomerModels\CustomerCreate.cs" />
     <Compile Include="CustomerModels\CustomerDetails.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
