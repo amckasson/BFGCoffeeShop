@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFGCoffeeShop.Data\BFGCoffeeShop.Data.csproj">
+      <Project>{3a563e97-4eca-4a38-ad88-b6726f7839f6}</Project>
+      <Name>BFGCoffeeShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFGCoffeeShop.Models\BFGCoffeeShop.Models.csproj">
+      <Project>{9049efb6-b95c-4aac-99a2-fa22ceb8e358}</Project>
+      <Name>BFGCoffeeShop.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
