@@ -60,5 +60,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFGCoffeeShop.Data\BFGCoffeeShop.Data.csproj">
+      <Project>{3a563e97-4eca-4a38-ad88-b6726f7839f6}</Project>
+      <Name>BFGCoffeeShop.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
