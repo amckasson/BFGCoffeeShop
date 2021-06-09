@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeOrder.cs" />
+    <Compile Include="CoffeeShop.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Addition.cs" />
     <Compile Include="IdentityModels.cs" />
