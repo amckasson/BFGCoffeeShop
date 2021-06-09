@@ -12,6 +12,6 @@ namespace BFGCoffeeShop.Models.MenuModels
 
         public string ItemName { get; set; }
 
-        public double ItemPrice { get; set; }
+        public decimal ItemPrice { get; set; }
     }
 }

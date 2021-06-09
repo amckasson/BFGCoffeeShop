@@ -22,7 +22,7 @@ namespace BFGCoffeeShop.Services
             var entity =
                 new CoffeeShop()
                 {
-                    Menu = model.Menu,
+                    MenuId = model.MenuId,
                     ShopName = model.ShopName,
                     Location = model.Location,
                     PhoneNumber = model.PhoneNumber,
@@ -31,7 +31,7 @@ namespace BFGCoffeeShop.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Customers.Add(entity);
+                ctx.CoffeeShops.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -43,7 +43,7 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                     .CoffeeShops
-                    .Where(e => e.CustomerTag == _userId)
+                    //.Where(e => e.CustomerTag == _userId)
                     .Select(
                         e =>
                         new CoffeeShopListItem
@@ -65,7 +65,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .CoffeeShops
-                    .Single(e => e.CoffeeShopId == id && e.CustomerTag == _userId);
+                    .Single(e => e.CoffeeShopId == id);
                 return
                         new CoffeeShopDetails
                         {
@@ -84,7 +84,7 @@ namespace BFGCoffeeShop.Services
             {
                 var entity = ctx
                     .CoffeeShops
-                    .Single(e => e.CoffeeShopId == e.CoffeeShopId && e.CustomerTag == _userId);
+                    .Single(e => e.CoffeeShopId == e.CoffeeShopId);
 
                 entity.CoffeeShopId = model.CoffeeShopId;
                 entity.ShopName = model.ShopName;
@@ -103,11 +103,10 @@ namespace BFGCoffeeShop.Services
             {
                 var entity = ctx
                     .CoffeeShops
-                    .Single(e => e.CoffeeShopId == coffeeShopId && e.CustomerTag == _userId);
+                    .Single(e => e.CoffeeShopId == coffeeShopId);
                 ctx.CoffeeShops.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
     }
-}
 }

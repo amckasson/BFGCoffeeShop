@@ -38,6 +38,8 @@ namespace BFGCoffeeShop.Services
                                 {
                                     MenuId = e.MenuId,
                                     ItemName = e.ItemName,
+                                    Price = e.ItemPrice
+                                    
                                 }
                         );
                 return query.ToArray();

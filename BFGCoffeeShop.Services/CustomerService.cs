@@ -41,11 +41,11 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                     .Customers
-                    .Where(e => e.CustomerTag == _userId)
                     .Select(
                         e =>
                         new CustomerList
                         {
+                            CustomerId = e.CustomerId,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
                             PaymentType = e.PaymentType,
@@ -61,14 +61,10 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Customers
-                    .Single(e => e.CustomerId == id && e.CustomerTag == _userId);
-                return
-                        new CustomerDetails
-                        {
-                            FirstName = entity.FirstName,
-                            LastName = entity.LastName,
-                            PaymentType = entity.PaymentType,
-                        };
+                    .Single(e => e.CustomerId == id);
+
+
+                return new CustomerDetails() {CustomerId = entity.CustomerId, FirstName = entity.FirstName, LastName = entity.LastName, PaymentType = entity.PaymentType }; 
             }
         }
 
@@ -78,7 +74,7 @@ namespace BFGCoffeeShop.Services
             {
                 var entity = ctx
                     .Customers
-                    .Single(e => e.CustomerId == e.CustomerId && e.CustomerTag == _userId);
+                    .Single(e => e.CustomerTag == _userId);
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
@@ -88,13 +84,13 @@ namespace BFGCoffeeShop.Services
             }
         }
 
-        public bool DeleteCustomer(int customerId)
+        public bool DeleteCustomer(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx
                     .Customers
-                    .Single(e => e.CustomerId == customerId && e.CustomerTag == _userId);
+                    .Single(e => e.CustomerId == id);
                 ctx.Customers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
