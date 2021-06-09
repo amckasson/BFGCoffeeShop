@@ -17,9 +17,11 @@ namespace BFGCoffeeShop.Data
         public string Country { get; set; }
         public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
-
-        //List<Addition> Additions { get; set; }
-        //List<Customer> Customers { get; set; }
-        //List<Menu> Menus { get; set; }  
+        public int? AdditionId { get; set; }
+        public virtual List<Addition> Additions { get; set; }
+        public int CustomerId { get; set; }
+        public virtual Customer Customers { get; set; }
+        public int MenuId { get; set; }
+        public virtual List<Menu> Menus { get; set; }  
     }
 }
