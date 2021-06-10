@@ -40,7 +40,6 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok(service);
         }
 
-
         public IHttpActionResult Put(CoffeeOrderEdit Coffee)
         {
             if (!ModelState.IsValid)

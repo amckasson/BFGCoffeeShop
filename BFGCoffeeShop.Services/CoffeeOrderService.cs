@@ -47,10 +47,8 @@ namespace BFGCoffeeShop.Services
                     MenuItem = e.MenuItem,
                     TotalPrice = e.TotalPrice,
                     Created = e.Created
-                }
-                );
+                });
                 return query.ToArray();
-                
             }
         }
 
