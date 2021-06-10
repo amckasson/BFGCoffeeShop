@@ -16,11 +16,10 @@ namespace BFGCoffeeShop.Services
             {
                 FullName = model.FullName,
                 Created = DateTimeOffset.Now,
-                //    AdditionId = model.AdditionId,
-                // new Comment
+                AdditionId = model.AdditionId,
                 Barista = model.Barista,
-                //    CustomerId = model.CustomerId,
-                //    MenuId = model.MenuId,
+                CustomerId = model.CustomerId,
+                MenuId = model.MenuId,
                 TotalPrice = Math.Round(model.TotalPrice, 2),
                 Country = model.Country
             };
@@ -44,10 +43,10 @@ namespace BFGCoffeeShop.Services
                             new CoffeeOrderListItem
                             {
                                 CoffeeOrderId = e.CoffeeOrderId,
-                                    //  CustomerId = e.CustomerId,
-                                    //  MenuId = e.MenuId,
-                                    //  AdditionId = e.AdditionId,
-                                    TotalPrice = e.TotalPrice,
+                                CustomerId = e.CustomerId,
+                                MenuId = e.MenuId,
+                                AdditionId = e.AdditionId,
+                                TotalPrice = e.TotalPrice,
                                 Created = e.Created
                             }
                         );
@@ -69,11 +68,11 @@ namespace BFGCoffeeShop.Services
                         CoffeeOrderId = entity.CoffeeOrderId,
                         FullName = entity.FullName,
                         Country = entity.Country,
-                            // CustomerId = entity.CustomerId,
-                            Barista = entity.Barista,
-                            // MenuId = entity.MenuId,
-                            // AdditionId = entity.AdditionId,
-                            TotalPrice = entity.TotalPrice,
+                        CustomerId = entity.CustomerId,
+                        Barista = entity.Barista,
+                        MenuId = entity.MenuId,
+                        AdditionId = entity.AdditionId,
+                        TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
                         Edited = entity.Edited
                     };
@@ -91,10 +90,10 @@ namespace BFGCoffeeShop.Services
                         .Single(e => e.CoffeeOrderId == model.CoffeeOrderId);
 
                 entity.Barista = model.Barista;
-                //  entity.AdditionId = model.AdditionId;
+                entity.AdditionId = model.AdditionId;
                 entity.Edited = DateTimeOffset.Now;
                 entity.Country = model.Country;
-                //  entity.MenuId = model.MenuID;
+                entity.MenuId = model.MenuID;
 
                 return ctx.SaveChanges() == 1;
             }
