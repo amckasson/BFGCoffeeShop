@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFGCoffeeShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public int? AdditionId { get; set; }
         public int CustomerId { get; set; }
         public int MenuId { get; set; }
+        public virtual Menu MenuItem { get; set; }
     }
 }

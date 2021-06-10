@@ -1,5 +1,6 @@
 ﻿using BFGCoffeeShop.Data;
 using BFGCoffeeShop.Models.CoffeeOrderModels;
+using BFGCoffeeShop.Models.MenuModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +13,16 @@ namespace BFGCoffeeShop.Services
     {
         public bool CreateCoffeeOrder(CoffeeOrderCreate model)
         {
+            //get total price from all of the menuitems and additions
+
             var entity = new CoffeeOrder()
             {
                 FullName = model.FullName,
+                UserId = model.getGUID(),
                 Created = DateTimeOffset.Now,
-                AdditionId = model.AdditionId,
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
-                MenuId = model.MenuId,
-                TotalPrice = Math.Round(model.TotalPrice, 2),
+                TotalPrice = model.getTotalPrice(),
                 Country = model.Country
             };
 
@@ -35,22 +37,18 @@ namespace BFGCoffeeShop.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                        .CoffeeOrders
-                        .Select(
-                        e =>
-                            new CoffeeOrderListItem
-                            {
-                                CoffeeOrderId = e.CoffeeOrderId,
-                                CustomerId = e.CustomerId,
-                                MenuId = e.MenuId,
-                                AdditionId = e.AdditionId,
-                                TotalPrice = e.TotalPrice,
-                                Created = e.Created
-                            }
-                        );
+                var query = ctx.CoffeeOrders.Select(e => new CoffeeOrderListItem
+                {
+                    CoffeeOrderId = e.CoffeeOrderId,
+                    CustomerId = e.CustomerId,
+                    MenuItem = e.MenuItem,
+                    TotalPrice = e.TotalPrice,
+                    AdditionId = e.AdditionId,
+                    Created = e.Created
+                }
+                );
                 return query.ToArray();
+                
             }
         }
 

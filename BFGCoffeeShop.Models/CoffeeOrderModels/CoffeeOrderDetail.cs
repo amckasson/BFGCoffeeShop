@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFGCoffeeShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,10 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public string Barista { get; set; }
         public decimal TotalPrice { get; set; }
         public int? AdditionId { get; set; }
+        public virtual IEnumerable<Addition> Additions { get; set; }
         public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
         public int MenuId { get; set; }
+        public virtual Menu MenuItem { get; set; }
     }
 }

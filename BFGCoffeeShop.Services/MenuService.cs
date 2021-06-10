@@ -18,6 +18,7 @@ namespace BFGCoffeeShop.Services
                     ItemName = model.ItemName,
                     ItemPrice = model.ItemPrice
                 };
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Menus.Add(entity);
