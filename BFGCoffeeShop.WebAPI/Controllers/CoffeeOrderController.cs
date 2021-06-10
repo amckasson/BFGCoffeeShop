@@ -10,9 +10,10 @@ using System.Web.Http;
 
 namespace BFGCoffeeShop.WebAPI.Controllers
 {
+    [Authorize]
     public class CoffeeOrderController : ApiController
     {
-
+        [HttpGet,Route("api/CoffeeOrder")]
         public IHttpActionResult Get()
         {
             var CoffeeOrder = CreateCoffeeOrderService();
@@ -20,6 +21,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok(coffee);
         }
 
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             var CoffeeOrder = CreateCoffeeOrderService();
@@ -27,19 +29,21 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok(coffee);
         }
 
-        public IHttpActionResult Post(CoffeeOrderCreate Coffee)
+        [HttpPost,Route("api/CoffeeOrder")]
+        public IHttpActionResult Post(CoffeeOrderCreate myCoffee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreateCoffeeOrderService();
 
-            if (!service.PostCoffeeOrder(Coffee))
+            if (!service.PostCoffeeOrder(myCoffee))
                 return InternalServerError();
 
-            return Ok(service);
+            return Ok();
         }
 
+        [HttpPut]
         public IHttpActionResult Put(CoffeeOrderEdit Coffee)
         {
             if (!ModelState.IsValid)
@@ -53,6 +57,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok(service);
         }
 
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateCoffeeOrderService();

@@ -25,7 +25,10 @@ namespace BFGCoffeeShop.Services
                 Created = DateTimeOffset.Now,
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
-                Country = model.Country
+                AdditionId = model.AdditionId,
+                MenuId = model.MenuId,
+                Country = model.Country,
+                CoffeeOrderTag = model.CoffeeOrderTag
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -46,7 +49,8 @@ namespace BFGCoffeeShop.Services
                     Additions = e.Additions,
                     MenuItem = e.MenuItem,
                     TotalPrice = e.TotalPrice,
-                    Created = e.Created
+                    Created = e.Created,
+
                 });
                 return query.ToArray();
             }
