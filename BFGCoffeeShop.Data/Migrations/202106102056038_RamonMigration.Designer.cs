@@ -7,13 +7,13 @@ namespace BFGCoffeeShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class andrewMigration : IMigrationMetadata
+    public sealed partial class RamonMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(andrewMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RamonMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106101806465_andrewMigration"; }
+            get { return "202106102056038_RamonMigration"; }
         }
         
         string IMigrationMetadata.Source

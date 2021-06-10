@@ -31,7 +31,7 @@ namespace BFGCoffeeShop.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Additions.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges()==1;
             }
         }
 
