@@ -59,8 +59,9 @@ namespace BFGCoffeeShop.WebAPI.Controllers
         public IHttpActionResult Delete(int id)
         {
             var additionService = CreateAdditionService();
-            if (additionService.DeleteAddition(id))
+            if (!additionService.DeleteAddition(id))
                 return InternalServerError();
+            
             return Ok();
         }
     }
