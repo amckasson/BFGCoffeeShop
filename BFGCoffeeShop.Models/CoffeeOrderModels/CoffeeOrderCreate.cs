@@ -9,7 +9,7 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
 {
     public class CoffeeOrderCreate
     {
-        public Guid CustomerOrder { get; set; }
+        public Guid CoffeeOrderTag { get; set; }
         public string FullName
         {
             get
@@ -31,19 +31,20 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         {
             foreach (Menu Item in MenuItem)
             {
+                if(Item.Customer.MenuTag == CoffeeOrderTag)
                 TotalPrice += Item.ItemPrice;
             }
             foreach (Addition Item in Additions)
             {
-                if (Item != null)
+                if (Item != null && Item.Customer.AdditionTag == CoffeeOrderTag)
                     TotalPrice += Item.Price;
             }
             return TotalPrice;
         }
 
-        public Guid getGUID()
+        public Guid GetGUID()
         {
-            return CustomerOrder = Customer.CustomerTag;
+            return CoffeeOrderTag = Customer.CustomerTag;
         }
 
     }

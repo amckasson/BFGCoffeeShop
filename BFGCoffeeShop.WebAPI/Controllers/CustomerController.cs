@@ -17,6 +17,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var customerService = new CustomerService(userId);
+
             return customerService;
         }
         public IHttpActionResult Post(CustomerCreate customer)

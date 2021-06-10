@@ -11,14 +11,16 @@ namespace BFGCoffeeShop.Services
 {
     public class CoffeeOrderService
     {
+        private Guid _userId;
+        
         public bool CreateCoffeeOrder(CoffeeOrderCreate model)
         {
-            //get total price from all of the menuitems and additions
+            _userId = model.GetGUID();
 
             var entity = new CoffeeOrder()
             {
                 FullName = model.FullName,
-                UserId = model.getGUID(),
+                CoffeeOrderTag = _userId,
                 Created = DateTimeOffset.Now,
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
@@ -76,7 +78,6 @@ namespace BFGCoffeeShop.Services
                     };
             }
         }
-
 
         public bool UpdateCoffeeOrder(CoffeeOrderEdit model)
         {

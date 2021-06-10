@@ -21,7 +21,6 @@ namespace BFGCoffeeShop.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok();
-
         }
         public IHttpActionResult Get()
         {

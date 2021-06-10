@@ -12,7 +12,7 @@ namespace BFGCoffeeShop.Data
     {
         [Key]
         public int CoffeeOrderId { get; set; }
-        public Guid UserId { get; set; }
+        public Guid CoffeeOrderTag{ get; set; }
         public string FullName { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Edited { get; set; }
