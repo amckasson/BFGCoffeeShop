@@ -110,6 +110,10 @@
     <Compile Include="Migrations\202106092035525_QuadMigration.Designer.cs">
       <DependentUpon>202106092035525_QuadMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106101806465_andrewMigration.cs" />
+    <Compile Include="Migrations\202106101806465_andrewMigration.Designer.cs">
+      <DependentUpon>202106101806465_andrewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106092035525_QuadMigration.resx">
       <DependentUpon>202106092035525_QuadMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106101806465_andrewMigration.resx">
+      <DependentUpon>202106101806465_andrewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

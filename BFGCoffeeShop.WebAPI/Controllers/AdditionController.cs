@@ -1,6 +1,7 @@
 ﻿
 using BFGCoffeeShop.Models.AdditionModels;
 using BFGCoffeeShop.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,14 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok();
 
         }
+
+        private AdditionService CreateAdditionService()
+        {
+            var additionId = Guid.Parse(User.Identity.GetUserId());
+            var _additionService = new AdditionService(additionId);
+            return _additionService;
+        }
+
         public IHttpActionResult Get()
         {
             var additions = _additionService.GetAdditions();

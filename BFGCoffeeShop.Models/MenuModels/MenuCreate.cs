@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFGCoffeeShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,13 @@ namespace BFGCoffeeShop.Models.MenuModels
 {
     public class MenuCreate
     {
+        //public Guid CustomerOrder { get; set; }
         public string ItemName { get; set; }
 
         public decimal ItemPrice { get; set; }
+
+       public int CustomerId { get; set; }
+        //public virtual Customer Customer { get; set; }
+       
     }
 }

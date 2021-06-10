@@ -16,11 +16,7 @@ namespace BFGCoffeeShop.Services
             {
                 FullName = model.FullName,
                 Created = DateTimeOffset.Now,
-                //    AdditionId = model.AdditionId,
-                // new Comment
                 Barista = model.Barista,
-                //    CustomerId = model.CustomerId,
-                //    MenuId = model.MenuId,
                 TotalPrice = Math.Round(model.TotalPrice, 2),
                 Country = model.Country
             };
