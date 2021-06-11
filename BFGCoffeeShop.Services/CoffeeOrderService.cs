@@ -14,10 +14,19 @@ namespace BFGCoffeeShop.Services
     {
         private readonly Guid _userId;
 
+        
         public CoffeeOrderService(Guid userId)
         {
             _userId = userId;
         }
+        
+        /*
+        public Guid getUserIdFromCustomer()
+        {
+            CoffeeOrder MyCoffeeOrder = new CoffeeOrder();
+            return MyCoffeeOrder.CoffeeOrderTag;
+        }
+        */
 
         public bool PostCoffeeOrder(CoffeeOrderCreate model)
         {
@@ -27,7 +36,7 @@ namespace BFGCoffeeShop.Services
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
                 Country = model.Country,
-                CoffeeOrderTag = model.CoffeeOrderTag
+                CoffeeOrderTag = model.Customer.CustomerTag
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -43,6 +52,7 @@ namespace BFGCoffeeShop.Services
             {
                 var query = ctx.CoffeeOrders.Select(e => new CoffeeOrderListItem()
                 {
+                    CoffeeOrderId = e.CoffeeOrderId,
                     CustomerId = e.CustomerId,
                     Created = e.Created,
                 });
@@ -60,13 +70,15 @@ namespace BFGCoffeeShop.Services
                     new CoffeeOrderDetail()
                     {
                         CoffeeOrderId = entity.CoffeeOrderId,
-                        FullName = entity.FullName,
+                        CustomerId = entity.CustomerId,
+                        FullName = entity.Customer.FullName,
                         Country = entity.Country,
                         Barista = entity.Barista,
                         TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
                         Edited = entity.Edited,
-                        Customer = entity.Customers
+                        Customer = entity.Customer,
+                        CoffeeOrderTag = entity.CoffeeOrderTag,
                     };
             }
         }

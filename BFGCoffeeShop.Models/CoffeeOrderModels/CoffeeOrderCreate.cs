@@ -13,5 +13,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public string Country { get; set; }
         public string Barista { get; set; }
         public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

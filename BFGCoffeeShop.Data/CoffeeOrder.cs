@@ -20,8 +20,8 @@ namespace BFGCoffeeShop.Data
         public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
 
-        [ForeignKey("Customers")]
+        [ForeignKey("Customer")]
         public int CustomerId { get; set; }
-        public virtual Customer Customers { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

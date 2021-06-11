@@ -20,7 +20,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return customerService;
         }
         public IHttpActionResult Post(CustomerCreate customer)
-        {
+        { 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 

@@ -23,7 +23,7 @@ namespace BFGCoffeeShop.Services
             var entity =
                 new Addition()
                 {
-                    AdditionTag = _userId,
+                    AdditionTag = create.Customer.CustomerTag,
                     Name = create.Name,
                     Price = create.Price,
                     CustomerId = create.CustomerId //Not sure if needed
@@ -63,7 +63,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Additions
-                    .Single(e => e.AdditionId == id && e.AdditionTag == _userId);
+                    .Single(e => e.AdditionId == id);
                 return
                     new AdditionDetail
                     {
