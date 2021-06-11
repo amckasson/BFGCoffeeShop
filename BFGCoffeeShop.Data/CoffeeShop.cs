@@ -12,14 +12,10 @@ namespace BFGCoffeeShop.Data
     {
         [Key]
         public int CoffeeShopId { get; set; }
-
-       // [ForeignKey("Menu")]
+     
         public int MenuId { get; set; }
-        //public virtual Menu MenuName { get; set; }
-
-        //[ForeignKey("CoffeeOrder")]
+      
         public int CoffeeOrderId { get; set; }
-        //public virtual CoffeeOrder CoffeeOrder { get; set; }
 
         public string ShopName { get; set; }
 

@@ -66,19 +66,7 @@ namespace BFGCoffeeShop.Services
                         TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
                         Edited = entity.Edited,
-
-                        MenuItems = entity.MenuItems.Select(e => new Menu()
-                        {
-                            ItemName = e.ItemName,
-                            ItemPrice = e.ItemPrice,
-                        }).ToList(),
-
-
-                        Additions = entity.Additions.Select(e => new Addition()
-                        {
-                            Name = e.Name,
-                            Price = e.Price
-                        }).ToList()
+                        Customer = entity.Customers
                     };
             }
         }

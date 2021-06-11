@@ -35,9 +35,6 @@ namespace BFGCoffeeShop.Data
         public int AdditionId { get; set; }
         public virtual Addition Addition { get; set; }
 
-
-        //      public List<FavoriteOrder> FavoriteOrders { get; set; }
-
         //      public List<FavoriteOrder> FavoriteOrders { get; set; } stretch goal
     }
 }
