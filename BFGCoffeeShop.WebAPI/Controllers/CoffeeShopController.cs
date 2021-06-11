@@ -20,8 +20,8 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            var coffeeShop = new CoffeeOrderService();
-            var coffee = coffeeShop.GetCoffeeOrderById(id);
+            var coffeeShop = new CoffeeShopService();
+            var coffee = coffeeShop.GetCoffeeShopById(id);
             return Ok(coffee);
         }
 
