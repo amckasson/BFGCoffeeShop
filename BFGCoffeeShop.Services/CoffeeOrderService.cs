@@ -45,8 +45,6 @@ namespace BFGCoffeeShop.Services
                 {
                     CustomerId = e.CustomerId,
                     Created = e.Created,
-                    NumMenuItems = e.MenuItems.Count,
-                    NumAdditionItems = e.Additions.Count
                 });
                 return query.ToList();
             }
