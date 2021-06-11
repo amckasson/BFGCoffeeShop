@@ -89,21 +89,9 @@
     <Compile Include="Addition.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="Migrations\202106090045081_InitialCreate.cs" />
-    <Compile Include="Migrations\202106090045081_InitialCreate.Designer.cs">
-      <DependentUpon>202106090045081_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106101429457_firstMigration.cs" />
-    <Compile Include="Migrations\202106101429457_firstMigration.Designer.cs">
-      <DependentUpon>202106101429457_firstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106101447504_secondMigration.cs" />
-    <Compile Include="Migrations\202106101447504_secondMigration.Designer.cs">
-      <DependentUpon>202106101447504_secondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106101825440_ThirdMigration.cs" />
-    <Compile Include="Migrations\202106101825440_ThirdMigration.Designer.cs">
-      <DependentUpon>202106101825440_ThirdMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202106111205051_FirstMigration.cs" />
+    <Compile Include="Migrations\202106111205051_FirstMigration.Designer.cs">
+      <DependentUpon>202106111205051_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,17 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106090045081_InitialCreate.resx">
-      <DependentUpon>202106090045081_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106101429457_firstMigration.resx">
-      <DependentUpon>202106101429457_firstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106101447504_secondMigration.resx">
-      <DependentUpon>202106101447504_secondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106101825440_ThirdMigration.resx">
-      <DependentUpon>202106101825440_ThirdMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106111205051_FirstMigration.resx">
+      <DependentUpon>202106111205051_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

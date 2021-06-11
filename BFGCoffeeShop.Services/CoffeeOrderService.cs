@@ -37,7 +37,7 @@ namespace BFGCoffeeShop.Services
             }
         }
 
-        public List<CoffeeOrderListItem> GetCoffeeOrders()
+        public IEnumerable<CoffeeOrderListItem> GetCoffeeOrders()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -45,18 +45,8 @@ namespace BFGCoffeeShop.Services
                 {
                     CustomerId = e.CustomerId,
                     Created = e.Created,
-                    MenuItems = e.MenuItems.Select(entity => new Menu()
-                    {
-                        ItemName = entity.ItemName,
-                        ItemPrice = entity.ItemPrice,
-                    }).ToList(),
-
-                    Additions = e.Additions.Select(entity => new Addition()
-                    {
-                        Name = entity.Name,
-                        Price = entity.Price
-                    }).ToList()
-
+                    NumMenuItems = e.MenuItems.Count,
+                    NumAdditionItems = e.Additions.Count
                 });
                 return query.ToList();
             }

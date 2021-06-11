@@ -10,7 +10,6 @@ namespace BFGCoffeeShop.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "BFGCoffeeShop.Data.ApplicationDbContext";
         }
 
         protected override void Seed(BFGCoffeeShop.Data.ApplicationDbContext context)

@@ -19,10 +19,12 @@ namespace BFGCoffeeShop.Data
         public string Country { get; set; }
         public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
-        public virtual IEnumerable<Addition> Additions { get; set; }
-        [ForeignKey("Customer")]
+        public virtual List<Addition> Additions { get; set; }
+
+        [ForeignKey(nameof(Customers))]
         public int CustomerId { get; set; }
         public virtual Customer Customers { get; set; }
-        public virtual IEnumerable<Menu> MenuItems { get; set; }  
+        public virtual List<Menu> MenuItems { get; set; }  
+        
     }
 }

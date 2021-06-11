@@ -12,7 +12,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public Guid CoffeeOrderTag { get; set; }
         public string Country { get; set; }
         public string Barista { get; set; }
-        public decimal TotalPrice { get; set; }
         public int CustomerId { get; set; }
     }
 }

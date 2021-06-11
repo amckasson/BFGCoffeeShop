@@ -46,6 +46,7 @@ namespace BFGCoffeeShop.Services
                         e =>
                         new CustomerList
                         {
+                            CustomerId = e.CustomerId,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
                             PaymentType = e.PaymentType,

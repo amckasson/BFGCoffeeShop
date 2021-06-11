@@ -16,7 +16,7 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string ItemName { get; set; }
 
-        [ForeignKey("CoffeeOrder")]
+        [ForeignKey(nameof(CoffeeOrder))]
         public int CoffeeOrderId { get; set; }
         public virtual CoffeeOrder CoffeeOrder { get; set; }
 
