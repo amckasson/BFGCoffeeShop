@@ -85,10 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeOrder.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="Addition.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Menu.cs" />
     <Compile Include="Migrations\202106111205051_FirstMigration.cs" />
     <Compile Include="Migrations\202106111205051_FirstMigration.Designer.cs">
       <DependentUpon>202106111205051_FirstMigration.cs</DependentUpon>
