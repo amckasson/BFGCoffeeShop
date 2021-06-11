@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202106102056038_RamonMigration.Designer.cs">
       <DependentUpon>202106102056038_RamonMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106111518284_TestingMigration.cs" />
+    <Compile Include="Migrations\202106111518284_TestingMigration.Designer.cs">
+      <DependentUpon>202106111518284_TestingMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106102056038_RamonMigration.resx">
       <DependentUpon>202106102056038_RamonMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106111518284_TestingMigration.resx">
+      <DependentUpon>202106111518284_TestingMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

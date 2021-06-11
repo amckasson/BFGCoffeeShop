@@ -47,6 +47,7 @@ namespace BFGCoffeeShop.Services
                         e =>
                         new AdditionItemList
                         {
+                            CustomerId = e.CustomerId,
                             AdditionId = e.AdditionId,
                             Name = e.Name,
                             Price = e.Price
@@ -67,6 +68,7 @@ namespace BFGCoffeeShop.Services
                 return
                     new AdditionDetail
                     {
+                        CustomerId = entity.CustomerId,
                         AdditionId = entity.AdditionId,
                         Name = entity.Name,
                         Price = entity.Price
