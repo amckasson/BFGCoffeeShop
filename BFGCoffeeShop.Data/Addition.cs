@@ -21,5 +21,6 @@ namespace BFGCoffeeShop.Data
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
         public Guid AdditionTag { get; set; }
+
     }
 }
