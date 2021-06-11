@@ -11,18 +11,27 @@ namespace BFGCoffeeShop.Services
 {
     public class AdditionService
     {
+        private readonly Guid _userId;
+
+        public AdditionService(Guid userId)
+        {
+            _userId = userId;
+        }
+      
         public bool CreateAddition(AdditionCreate create)
         {
             var entity =
                 new Addition()
                 {
+                    AdditionTag = _userId,
                     Name = create.Name,
-                    Price = create.Price
+                    Price = create.Price,
+                    CustomerId = create.CustomerId //Not sure if needed
                 };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Additions.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges()==1;
             }
         }
 
@@ -33,6 +42,7 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                     .Additions
+                    .Where(e => e.AdditionTag == _userId)
                     .Select(
                         e =>
                         new AdditionItemList
@@ -53,7 +63,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Additions
-                    .Single(e => e.AdditionId == id);
+                    .Single(e => e.AdditionId == id && e.AdditionTag == _userId);
                 return
                     new AdditionDetail
                     {
@@ -71,7 +81,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Additions
-                    .Single(e => e.AdditionId == edit.AdditionId);
+                    .Single(e => e.AdditionId == edit.AdditionId && e.AdditionTag == _userId);
                 entity.Name = edit.Name;
                 entity.Price = edit.Price;
                 return ctx.SaveChanges() == 1;
@@ -85,7 +95,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Additions
-                    .Single(e => e.AdditionId == additionId);
+                    .Single(e => e.AdditionId == additionId && e.AdditionTag == _userId);
                 ctx.Additions.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

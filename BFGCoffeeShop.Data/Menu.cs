@@ -18,6 +18,10 @@ namespace BFGCoffeeShop.Data
         //public List<string> MenuList { get; set; }
 
         [Required]
-        public double ItemPrice { get; set; }
+        public decimal ItemPrice { get; set; }
+
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
+        public Guid MenuTag { get; set; }
     }
 }

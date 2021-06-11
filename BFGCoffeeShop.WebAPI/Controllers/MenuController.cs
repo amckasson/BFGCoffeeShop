@@ -1,5 +1,6 @@
 ﻿using BFGCoffeeShop.Models.MenuModels;
 using BFGCoffeeShop.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
     {
 
 
-        private MenuService _menuService = new MenuService();
+       // private MenuService _menuService = new MenuService();
 
         public IHttpActionResult Get()
         {
@@ -37,8 +38,8 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 
         private MenuService CreateMenuService()
         {
-            //var menuId = User.Identity.Get
-            var menuService = new MenuService();
+            var menuId = Guid.Parse(User.Identity.GetUserId());
+            var menuService = new MenuService(menuId);
             return menuService;
         }
 

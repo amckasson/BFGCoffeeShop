@@ -37,6 +37,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             var customers = noteService.GetCustomer();
             return Ok(customers);
         }
+
         public IHttpActionResult Get(int id)
         {
             CustomerService customerService = CreateCustomerService();
@@ -56,7 +57,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 
             return Ok(service);
         }
-
+    
         public IHttpActionResult Delete(int id)
         {
             var service = CreateCustomerService();
@@ -64,7 +65,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             if (!service.DeleteCustomer(id))
                 return InternalServerError();
 
-            return Ok($"Customer with Id #{id} has been deleted");
+            return Ok($"{id} has been deleted");
         }
     }
 }

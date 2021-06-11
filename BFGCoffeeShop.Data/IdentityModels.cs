@@ -33,6 +33,7 @@ namespace BFGCoffeeShop.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<CoffeeShop> CoffeeShops { get; set; }
         public DbSet<CoffeeOrder> CoffeeOrders { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Addition> Additions { get; set; }

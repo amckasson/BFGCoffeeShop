@@ -85,15 +85,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeOrder.cs" />
+    <Compile Include="CoffeeShop.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Addition.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Migrations\202106102056038_RamonMigration.cs" />
+    <Compile Include="Migrations\202106102056038_RamonMigration.Designer.cs">
+      <DependentUpon>202106102056038_RamonMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106102056038_RamonMigration.resx">
+      <DependentUpon>202106102056038_RamonMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

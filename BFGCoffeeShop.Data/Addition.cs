@@ -16,6 +16,10 @@ namespace BFGCoffeeShop.Data
         public string Name { get; set; }
 
         [Required]
-        public double Price { get; set; }
+        public decimal Price { get; set; }
+
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
+        public Guid AdditionTag { get; set; }
     }
 }

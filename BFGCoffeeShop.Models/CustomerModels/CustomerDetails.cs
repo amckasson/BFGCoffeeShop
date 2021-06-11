@@ -9,6 +9,7 @@ namespace BFGCoffeeShop.Models.CustomerModels
 {
     public class CustomerDetails
     {
+        public int CustomerId { get; set; }
         [Required]
         public string FirstName { get; set; }
 

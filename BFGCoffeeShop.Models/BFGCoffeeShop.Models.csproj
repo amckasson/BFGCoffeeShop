@@ -58,6 +58,10 @@
     <Compile Include="CoffeeOrderModels\CoffeeOrderDetail.cs" />
     <Compile Include="CoffeeOrderModels\CoffeeOrderEdit.cs" />
     <Compile Include="CoffeeOrderModels\CoffeeOrderListItem.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopCreate.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopDetails.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopEdit.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopListItem.cs" />
     <Compile Include="CustomerModels\CustomerCreate.cs" />
     <Compile Include="CustomerModels\CustomerDetails.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
