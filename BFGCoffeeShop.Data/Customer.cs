@@ -27,9 +27,14 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string PaymentType { get; set; }
 
+        [ForeignKey("Menu")]
+        public int MenuId { get; set; }
 
-        //[ForeignKey("CoffeeOrder")]
-        //public int CoffeeOrderId { get; set; }
+        [ForeignKey("Addition")]
+        public int AdditionId { get; set; }
+
+        [ForeignKey("CoffeeOrder")]
+        public int CoffeeOrderId { get; set; }
 
         //      public List<FavoriteOrder> FavoriteOrders { get; set; }
 
