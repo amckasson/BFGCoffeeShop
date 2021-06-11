@@ -10,7 +10,7 @@ namespace BFGCoffeeShop.Data
     public class Addition
     {
         [Key]
-        public int AdditionId { get; set; }
+        public int? AdditionId { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -20,6 +20,5 @@ namespace BFGCoffeeShop.Data
 
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
-        public Guid AdditionTag { get; set; }
     }
 }

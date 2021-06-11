@@ -9,23 +9,16 @@ using System.Threading.Tasks;
 namespace BFGCoffeeShop.Services
 {
     public class MenuService
-    {
-        private readonly Guid _userId;
+    { 
 
-        public MenuService(Guid userId)
-        {
-            _userId = userId;
-        }
         public bool CreateMenu(MenuCreate model)
         {
-            //_userId = model.CustomerOrder;
             var entity =
                 new Menu()
                 {
-                    MenuTag = _userId,
                     ItemName = model.ItemName,
                     ItemPrice = model.ItemPrice,
-                    CustomerId = model.CustomerId // Not sure if needed
+                    CustomerId = model.CustomerId, 
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -41,7 +34,7 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                         .Menus
-                        .Where(e => e.MenuTag == _userId)
+                        .Where(e => e.Customer.CustomerId == e.CustomerId)
                         .Select(
                             e =>
                                 new MenuListItem
@@ -49,7 +42,6 @@ namespace BFGCoffeeShop.Services
                                     MenuId = e.MenuId,
                                     ItemName = e.ItemName,
                                     Price = e.ItemPrice
-                                    
                                 }
                         );
                 return query.ToArray();
@@ -63,7 +55,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                         .Menus
-                        .Single(e => e.MenuId == id && e.MenuTag == _userId);
+                        .Single(e => e.MenuId == id);
                 return
                     new MenuDetail
                     {
@@ -81,7 +73,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                         .Menus
-                        .Single(e => e.MenuId == model.MenuId && e.MenuTag == _userId);
+                        .Single(e => e.MenuId == model.MenuId);
 
                 entity.MenuId = model.MenuId;
                 entity.ItemName = model.ItemName;
@@ -98,7 +90,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                         .Menus
-                        .Single(e => e.MenuId == menuId && e.MenuTag == _userId);
+                        .Single(e => e.MenuId == menuId);
 
                 ctx.Menus.Remove(entity);
 

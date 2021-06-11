@@ -9,13 +9,13 @@ namespace BFGCoffeeShop.Models.MenuModels
 {
     public class MenuCreate
     {
-        //public Guid CustomerOrder { get; set; }
+ 
         public string ItemName { get; set; }
 
         public decimal ItemPrice { get; set; }
 
        public int CustomerId { get; set; }
-        //public virtual Customer Customer { get; set; }
+       public virtual Customer Customer { get; set; }
        
     }
 }

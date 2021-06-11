@@ -10,7 +10,6 @@ namespace BFGCoffeeShop.Models.AdditionModels
 {
     public class AdditionCreate
     {
-        //public Guid CustomerOrder { get; set; }
         [Required]
         public string Name { get; set; }
 

@@ -10,7 +10,6 @@ using System.Web.Http;
 
 namespace BFGCoffeeShop.WebAPI.Controllers
 {
-    [Authorize]
     public class CoffeeOrderController : ApiController
     {
         [HttpGet, Route("api/CoffeeOrder")]
@@ -70,8 +69,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 
         public CoffeeOrderService CreateCoffeeOrderService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var CoffeeService = new CoffeeOrderService(userId);
+            var CoffeeService = new CoffeeOrderService();
             return CoffeeService;
         }
     }

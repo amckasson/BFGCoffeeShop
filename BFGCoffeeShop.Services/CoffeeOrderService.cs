@@ -12,13 +12,6 @@ namespace BFGCoffeeShop.Services
 {
     public class CoffeeOrderService
     {
-        private readonly Guid _userId;
-
-        public CoffeeOrderService(Guid userId)
-        {
-            _userId = userId;
-        }
-
         public bool PostCoffeeOrder(CoffeeOrderCreate model)
         {
             var entity = new CoffeeOrder()
@@ -27,7 +20,6 @@ namespace BFGCoffeeShop.Services
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
                 Country = model.Country,
-                CoffeeOrderTag = model.CoffeeOrderTag
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -43,6 +35,7 @@ namespace BFGCoffeeShop.Services
             {
                 var query = ctx.CoffeeOrders.Select(e => new CoffeeOrderListItem()
                 {
+                    CoffeeOrderId = e.CoffeeOrderId,
                     CustomerId = e.CustomerId,
                     Created = e.Created,
                 });
@@ -60,13 +53,13 @@ namespace BFGCoffeeShop.Services
                     new CoffeeOrderDetail()
                     {
                         CoffeeOrderId = entity.CoffeeOrderId,
-                        FullName = entity.FullName,
+                        CustomerId = entity.Customer.CustomerId,
+                        FullName = entity.Customer.FullName,
                         Country = entity.Country,
                         Barista = entity.Barista,
                         TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
-                        Edited = entity.Edited,
-                        Customer = entity.Customers
+                        Edited = entity.Edited
                     };
             }
         }
@@ -87,7 +80,6 @@ namespace BFGCoffeeShop.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
 
         public bool DeleteCoffeeOrder(int CoffeeOrderId)
         {

@@ -13,7 +13,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public DateTimeOffset Created { get; set; }
         public decimal TotalPrice { get; set; }
         public int CustomerId { get; set; }
-        public int NumMenuItems { get; set; }
-        public int NumAdditionItems { get; set; }
+        
     }
 }
