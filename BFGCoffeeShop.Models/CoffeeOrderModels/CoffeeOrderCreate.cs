@@ -9,7 +9,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
 {
     public class CoffeeOrderCreate
     {
-        public Guid CoffeeOrderTag { get; set; }
         public string Country { get; set; }
         public string Barista { get; set; }
         public int CustomerId { get; set; }

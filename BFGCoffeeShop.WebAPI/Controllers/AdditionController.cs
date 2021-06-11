@@ -34,8 +34,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 
         private AdditionService CreateAdditionService()
         {
-            var additionId = Guid.Parse(User.Identity.GetUserId());
-            var additionService = new AdditionService(additionId);
+            var additionService = new AdditionService();
             return additionService;
         }
 

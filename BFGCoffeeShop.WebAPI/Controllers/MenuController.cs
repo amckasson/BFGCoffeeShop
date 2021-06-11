@@ -12,10 +12,6 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 {
     public class MenuController : ApiController
     {
-
-
-       // private MenuService _menuService = new MenuService();
-
         public IHttpActionResult Get()
         {
             MenuService menuService = CreateMenuService();
@@ -38,8 +34,7 @@ namespace BFGCoffeeShop.WebAPI.Controllers
 
         private MenuService CreateMenuService()
         {
-            var menuId = Guid.Parse(User.Identity.GetUserId());
-            var menuService = new MenuService(menuId);
+            var menuService = new MenuService();
             return menuService;
         }
 
@@ -73,4 +68,4 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok();
         }
     }
-    }
+}

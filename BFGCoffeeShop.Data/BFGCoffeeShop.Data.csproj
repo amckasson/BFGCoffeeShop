@@ -98,6 +98,18 @@
     <Compile Include="Migrations\202106111845040_SecondMigration.Designer.cs">
       <DependentUpon>202106111845040_SecondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106112013187_GetOuttaHereGUID.cs" />
+    <Compile Include="Migrations\202106112013187_GetOuttaHereGUID.Designer.cs">
+      <DependentUpon>202106112013187_GetOuttaHereGUID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106112015541_SimpleSimpleSimp.cs" />
+    <Compile Include="Migrations\202106112015541_SimpleSimpleSimp.Designer.cs">
+      <DependentUpon>202106112015541_SimpleSimpleSimp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106112042520_MigrationYes.cs" />
+    <Compile Include="Migrations\202106112042520_MigrationYes.Designer.cs">
+      <DependentUpon>202106112042520_MigrationYes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106111845040_SecondMigration.resx">
       <DependentUpon>202106111845040_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106112013187_GetOuttaHereGUID.resx">
+      <DependentUpon>202106112013187_GetOuttaHereGUID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106112015541_SimpleSimpleSimp.resx">
+      <DependentUpon>202106112015541_SimpleSimpleSimp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106112042520_MigrationYes.resx">
+      <DependentUpon>202106112042520_MigrationYes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

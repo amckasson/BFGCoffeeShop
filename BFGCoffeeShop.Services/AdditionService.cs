@@ -11,23 +11,16 @@ namespace BFGCoffeeShop.Services
 {
     public class AdditionService
     {
-        private readonly Guid _userId;
-
-        public AdditionService(Guid userId)
-        {
-            _userId = userId;
-        }
-      
         public bool CreateAddition(AdditionCreate create)
         {
             var entity =
                 new Addition()
                 {
-                    AdditionTag = create.Customer.CustomerTag,
                     Name = create.Name,
                     Price = create.Price,
-                    CustomerId = create.CustomerId //Not sure if needed
+                    CustomerId = create.Customer.CustomerId,
                 };
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Additions.Add(entity);
@@ -42,7 +35,7 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                     .Additions
-                    .Where(e => e.AdditionTag == _userId)
+                    .Where(e => e.CustomerId == e.Customer.CustomerId)
                     .Select(
                         e =>
                         new AdditionItemList
@@ -81,7 +74,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Additions
-                    .Single(e => e.AdditionId == edit.AdditionId && e.AdditionTag == _userId);
+                    .Single(e => e.AdditionId == edit.AdditionId);
                 entity.Name = edit.Name;
                 entity.Price = edit.Price;
                 return ctx.SaveChanges() == 1;
@@ -95,7 +88,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Additions
-                    .Single(e => e.AdditionId == additionId && e.AdditionTag == _userId);
+                    .Single(e => e.AdditionId == additionId);
                 ctx.Additions.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

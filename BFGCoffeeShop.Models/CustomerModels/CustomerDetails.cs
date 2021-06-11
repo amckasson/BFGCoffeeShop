@@ -20,10 +20,10 @@ namespace BFGCoffeeShop.Models.CustomerModels
         [Required]
         public string PaymentType { get; set; }
 
-        public int MenuId { get; set; }
+        //public int MenuId { get; set; }
         public virtual List<Menu> Menus { get; set; }
 
-        public int AdditionId { get; set; }
+        //public int AdditionId { get; set; }
         public virtual List<Addition> Additions { get; set; }
         //public List<FavoriteOrder> FavoriteOrders { get; set; }
     }

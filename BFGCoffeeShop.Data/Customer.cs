@@ -26,11 +26,16 @@ namespace BFGCoffeeShop.Data
 
         [Required]
         public string PaymentType { get; set; }
-        public int MenuId { get; set; }
+        //public int MenuId { get; set; }
         public virtual List<Menu> Menu { get; set; }
 
-        public int AdditionId { get; set; }
+        //public int? AdditionId { get; set; }
         public virtual List<Addition> Addition { get; set; }
+
+        public object Select(Func<object, Addition> p)
+        {
+            throw new NotImplementedException();
+        }
 
         //public List<FavoriteOrder> FavoriteOrders { get; set; } stretch goal
     }

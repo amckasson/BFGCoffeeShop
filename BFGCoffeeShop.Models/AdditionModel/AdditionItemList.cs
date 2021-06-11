@@ -8,7 +8,7 @@ namespace BFGCoffeeShop.Models.AdditionModels
 {
     public class AdditionItemList
     {
-        public int AdditionId { get; set; }
+        public int? AdditionId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
     }
