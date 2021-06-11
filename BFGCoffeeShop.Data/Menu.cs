@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,9 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string ItemName { get; set; }
 
-        //public List<string> MenuList { get; set; }
+        [ForeignKey("CoffeeOrder")]
+        public int CoffeeOrderId { get; set; }
+        public virtual CoffeeOrder CoffeeOrder { get; set; }
 
         [Required]
         public decimal ItemPrice { get; set; }

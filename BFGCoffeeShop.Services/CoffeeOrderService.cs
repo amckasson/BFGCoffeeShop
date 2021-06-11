@@ -1,4 +1,5 @@
 ﻿using BFGCoffeeShop.Data;
+using BFGCoffeeShop.Models.AdditionModels;
 using BFGCoffeeShop.Models.CoffeeOrderModels;
 using BFGCoffeeShop.Models.MenuModels;
 using System;
@@ -25,8 +26,6 @@ namespace BFGCoffeeShop.Services
                 Created = DateTimeOffset.Now,
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
-                AdditionId = model.AdditionId,
-                MenuId = model.MenuId,
                 Country = model.Country,
                 CoffeeOrderTag = model.CoffeeOrderTag
             };
@@ -38,21 +37,28 @@ namespace BFGCoffeeShop.Services
             }
         }
 
-        public IEnumerable<CoffeeOrderListItem> GetCoffeeOrders()
+        public List<CoffeeOrderListItem> GetCoffeeOrders()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.CoffeeOrders.Select(e => new CoffeeOrderListItem
+                var query = ctx.CoffeeOrders.Select(e => new CoffeeOrderListItem()
                 {
-                    CoffeeOrderId = e.CoffeeOrderId,
                     CustomerId = e.CustomerId,
-                    Additions = e.Additions,
-                    MenuItem = e.MenuItem,
-                    TotalPrice = e.TotalPrice,
                     Created = e.Created,
+                    MenuItems = e.MenuItems.Select(entity => new Menu()
+                    {
+                        ItemName = entity.ItemName,
+                        ItemPrice = entity.ItemPrice,
+                    }).ToList(),
+
+                    Additions = e.Additions.Select(entity => new Addition()
+                    {
+                        Name = entity.Name,
+                        Price = entity.Price
+                    }).ToList()
 
                 });
-                return query.ToArray();
+                return query.ToList();
             }
         }
 
@@ -66,15 +72,25 @@ namespace BFGCoffeeShop.Services
                     new CoffeeOrderDetail()
                     {
                         CoffeeOrderId = entity.CoffeeOrderId,
-                        CustomerId = entity.CustomerId,
-                        Additions = entity.Additions,
                         FullName = entity.FullName,
                         Country = entity.Country,
                         Barista = entity.Barista,
                         TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
                         Edited = entity.Edited,
-                        MenuItem = entity.MenuItem,
+
+                        MenuItems = entity.MenuItems.Select(e => new Menu()
+                        {
+                            ItemName = e.ItemName,
+                            ItemPrice = e.ItemPrice,
+                        }).ToList(),
+
+
+                        Additions = entity.Additions.Select(e => new Addition()
+                        {
+                            Name = e.Name,
+                            Price = e.Price
+                        }).ToList()
                     };
             }
         }
@@ -89,10 +105,8 @@ namespace BFGCoffeeShop.Services
                         .Single(e => e.CoffeeOrderId == model.CoffeeOrderId);
 
                 entity.Barista = model.Barista;
-                //entity.AdditionId = model.AdditionId;
                 entity.Edited = DateTimeOffset.Now;
                 entity.Country = model.Country;
-               // entity.MenuId = model.MenuID;
 
                 return ctx.SaveChanges() == 1;
             }
