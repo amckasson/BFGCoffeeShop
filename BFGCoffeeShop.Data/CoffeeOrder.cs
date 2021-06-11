@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,15 +12,19 @@ namespace BFGCoffeeShop.Data
     {
         [Key]
         public int CoffeeOrderId { get; set; }
+        public Guid CoffeeOrderTag { get; set; }
         public string FullName { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Edited { get; set; }
         public string Country { get; set; }
         public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
+        public virtual List<Addition> Additions { get; set; }
 
-        //List<Addition> Additions { get; set; }
-        //List<Customer> Customers { get; set; }
-        //List<Menu> Menus { get; set; }  
+        [ForeignKey(nameof(Customers))]
+        public int CustomerId { get; set; }
+        public virtual Customer Customers { get; set; }
+        public virtual List<Menu> MenuItems { get; set; }
+
     }
 }

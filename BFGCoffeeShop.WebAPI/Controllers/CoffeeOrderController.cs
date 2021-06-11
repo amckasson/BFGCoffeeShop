@@ -1,5 +1,6 @@
 ﻿using BFGCoffeeShop.Models.CoffeeOrderModels;
 using BFGCoffeeShop.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,43 +10,46 @@ using System.Web.Http;
 
 namespace BFGCoffeeShop.WebAPI.Controllers
 {
+    [Authorize]
     public class CoffeeOrderController : ApiController
     {
-
+        [HttpGet, Route("api/CoffeeOrder")]
         public IHttpActionResult Get()
         {
-            var CoffeeOrder = new CoffeeOrderService();
+            var CoffeeOrder = CreateCoffeeOrderService();
             var coffee = CoffeeOrder.GetCoffeeOrders();
             return Ok(coffee);
         }
 
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var CoffeeOrder = new CoffeeOrderService();
+            var CoffeeOrder = CreateCoffeeOrderService();
             var coffee = CoffeeOrder.GetCoffeeOrderById(id);
             return Ok(coffee);
         }
 
-        public IHttpActionResult Post(CoffeeOrderCreate Coffee)
+        [HttpPost, Route("api/CoffeeOrder")]
+        public IHttpActionResult Post(CoffeeOrderCreate myCoffee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = new CoffeeOrderService();
+            var service = CreateCoffeeOrderService();
 
-            if (!service.CreateCoffeeOrder(Coffee))
+            if (!service.PostCoffeeOrder(myCoffee))
                 return InternalServerError();
 
-            return Ok(service);
+            return Ok();
         }
 
-
+        [HttpPut]
         public IHttpActionResult Put(CoffeeOrderEdit Coffee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = new CoffeeOrderService();
+            var service = CreateCoffeeOrderService();
 
             if (!service.UpdateCoffeeOrder(Coffee))
                 return InternalServerError();
@@ -53,14 +57,22 @@ namespace BFGCoffeeShop.WebAPI.Controllers
             return Ok(service);
         }
 
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            var service = new CoffeeOrderService();
+            var service = CreateCoffeeOrderService();
 
             if (!service.DeleteCoffeeOrder(id))
                 return InternalServerError();
 
             return Ok($"CoffeeOrder with Id #{id} has been deleted");
+        }
+
+        public CoffeeOrderService CreateCoffeeOrderService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var CoffeeService = new CoffeeOrderService(userId);
+            return CoffeeService;
         }
     }
 }
