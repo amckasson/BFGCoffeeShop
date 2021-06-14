@@ -7,13 +7,13 @@ namespace BFGCoffeeShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class MigrationYes : IMigrationMetadata
+    public sealed partial class SecondMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationYes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SecondMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106112042520_MigrationYes"; }
+            get { return "202106141502398_SecondMigration"; }
         }
         
         string IMigrationMetadata.Source

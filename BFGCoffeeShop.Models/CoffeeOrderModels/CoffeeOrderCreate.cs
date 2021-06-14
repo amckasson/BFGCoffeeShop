@@ -9,9 +9,10 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
 {
     public class CoffeeOrderCreate
     {
+        public int CoffeeShopId { get; set; }
         public string Country { get; set; }
         public string Barista { get; set; }
         public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+        //public virtual Customer Customer { get; set; }
     }
 }

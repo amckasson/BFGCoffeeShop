@@ -16,6 +16,7 @@ namespace BFGCoffeeShop.Models.CustomerModels
 
         [Required]
         public string LastName { get; set; }
+        public decimal TotalPrice { get; set; }
 
         [Required]
         public string PaymentType { get; set; }

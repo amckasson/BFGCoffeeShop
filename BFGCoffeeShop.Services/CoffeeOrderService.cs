@@ -20,6 +20,7 @@ namespace BFGCoffeeShop.Services
                 Barista = model.Barista,
                 CustomerId = model.CustomerId,
                 Country = model.Country,
+                CoffeeShopId = model.CoffeeShopId
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -53,7 +54,7 @@ namespace BFGCoffeeShop.Services
                     new CoffeeOrderDetail()
                     {
                         CoffeeOrderId = entity.CoffeeOrderId,
-                        CustomerId = entity.Customer.CustomerId,
+                        CustomerId = entity.CustomerId,
                         FullName = entity.Customer.FullName,
                         Country = entity.Country,
                         Barista = entity.Barista,

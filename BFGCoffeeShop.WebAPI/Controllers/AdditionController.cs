@@ -18,9 +18,12 @@ namespace BFGCoffeeShop.WebAPI.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
             var service = CreateAdditionService();
+
             if (!service.CreateAddition(create))
                 return InternalServerError();
+
             return Ok();
 
         }
@@ -49,9 +52,12 @@ namespace BFGCoffeeShop.WebAPI.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
             var additionService = CreateAdditionService();
+
             if (!additionService.UpdateAddition(edit))
                 return InternalServerError();
+
             return Ok();
         }
 

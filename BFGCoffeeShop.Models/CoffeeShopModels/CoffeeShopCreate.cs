@@ -9,8 +9,6 @@ namespace BFGCoffeeShop.Models.CoffeeShopModels
 {
     public class CoffeeShopCreate
     {
-        public int MenuId { get; set; }
-
         public string ShopName { get; set; }
 
         public string Location { get; set; }

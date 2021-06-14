@@ -32,11 +32,7 @@ namespace BFGCoffeeShop.Data
         //public int? AdditionId { get; set; }
         public virtual List<Addition> Addition { get; set; }
 
-        public object Select(Func<object, Addition> p)
-        {
-            throw new NotImplementedException();
-        }
-
+        public int CoffeeOrderId { get; set; }
         //public List<FavoriteOrder> FavoriteOrders { get; set; } stretch goal
     }
 }

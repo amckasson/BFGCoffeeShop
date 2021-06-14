@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFGCoffeeShop.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,7 @@ namespace BFGCoffeeShop.Models.CoffeeShopModels
         public string PhoneNumber { get; set; }
 
         public string Website { get; set; }
+
+       
     }
 }

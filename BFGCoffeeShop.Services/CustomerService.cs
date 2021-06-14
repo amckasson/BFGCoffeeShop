@@ -68,11 +68,12 @@ namespace BFGCoffeeShop.Services
                     FirstName = entity.FirstName, 
                     LastName = entity.LastName, 
                     PaymentType = entity.PaymentType,
+
                     Additions = entity.Addition.Select(e => new Addition()
                     {
                         AdditionId = e.AdditionId,
                         Name = e.Name,
-                        Price = e.Price
+                        Price = e.Price,
                     }).ToList(),
                     Menus = entity.Menu.Select(e => new Menu()
                     {

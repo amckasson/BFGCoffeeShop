@@ -12,11 +12,7 @@ namespace BFGCoffeeShop.Data
     {
         [Key]
         public int CoffeeShopId { get; set; }
-     
-        public int MenuId { get; set; }
-      
-        public int CoffeeOrderId { get; set; }
-
+             
         public string ShopName { get; set; }
 
         public string Location { get; set; }
@@ -24,5 +20,8 @@ namespace BFGCoffeeShop.Data
         public string PhoneNumber { get; set; }
 
         public string Website { get; set; }
+
+        public int CoffeeOrderId { get; set; }
+        public virtual List<CoffeeOrder> CoffeeOrder { get; set; }
     }
 }

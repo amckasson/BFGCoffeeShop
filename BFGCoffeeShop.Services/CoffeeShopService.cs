@@ -1,4 +1,5 @@
 ﻿using BFGCoffeeShop.Data;
+using BFGCoffeeShop.Models.CoffeeOrderModels;
 using BFGCoffeeShop.Models.CoffeeShopModels;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,6 @@ namespace BFGCoffeeShop.Services
             var entity =
                 new CoffeeShop()
                 {
-                    MenuId = model.MenuId,
                     ShopName = model.ShopName,
                     Location = model.Location,
                     PhoneNumber = model.PhoneNumber,
@@ -38,7 +38,6 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                     .CoffeeShops
-                    //.Where(e => e.CustomerTag == _userId)
                     .Select(
                         e =>
                         new CoffeeShopListItem
@@ -69,6 +68,17 @@ namespace BFGCoffeeShop.Services
                             Location = entity.Location,
                             PhoneNumber = entity.PhoneNumber,
                             Website = entity.Website,
+                            CoffeeOrders = entity.CoffeeOrder.Select(e => new CoffeeOrderDetail()
+                            {
+                                CoffeeOrderId = e.CoffeeOrderId,
+                                CustomerId = e.CustomerId,
+                                Country = e.Country,
+                                Barista = e.Barista,
+                                FullName = e.Customer.FullName,
+                                TotalPrice = e.TotalPrice,
+                                Created = e.Created,
+                                Edited = e.Edited
+                            }).ToList()
                         };
             }
         }

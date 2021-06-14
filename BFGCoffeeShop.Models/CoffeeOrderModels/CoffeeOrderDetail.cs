@@ -19,6 +19,8 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public decimal TotalPrice { get; set; }
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+
+        //public int CoffeeShopId { get; set; }
+       //public virtual Customer Customer { get; set; }
     }
 }

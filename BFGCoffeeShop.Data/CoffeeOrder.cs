@@ -18,6 +18,7 @@ namespace BFGCoffeeShop.Data
         public string Country { get; set; }
         public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
+        public int CoffeeShopId { get; set; }
 
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
