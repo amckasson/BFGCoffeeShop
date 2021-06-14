@@ -20,7 +20,8 @@ namespace BFGCoffeeShop.Data
 
         public decimal TotalPrice { get; set; }
 
-        public int CustomerId { get; set; }
-        //public virtual Customer Customer { get; set; }
+        //public int CustomerId { get; set; }
+        public int CoffeeOrderId { get; set; }
+        
     }
 }

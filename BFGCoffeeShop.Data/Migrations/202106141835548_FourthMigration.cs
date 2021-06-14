@@ -3,16 +3,16 @@ namespace BFGCoffeeShop.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SecondMigration : DbMigration
+    public partial class FourthMigration : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.CoffeeShop", "CoffeeOrderId", c => c.Int(nullable: false));
+            AddColumn("dbo.CoffeeOrder", "FullName", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.CoffeeShop", "CoffeeOrderId");
+            DropColumn("dbo.CoffeeOrder", "FullName");
         }
     }
 }

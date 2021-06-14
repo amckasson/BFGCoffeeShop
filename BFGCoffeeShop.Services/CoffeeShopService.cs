@@ -71,14 +71,17 @@ namespace BFGCoffeeShop.Services
                             CoffeeOrders = entity.CoffeeOrder.Select(e => new CoffeeOrderDetail()
                             {
                                 CoffeeOrderId = e.CoffeeOrderId,
-                                CustomerId = e.CustomerId,
+                                //CustomerId = e.CustomerId,
                                 Country = e.Country,
                                 Barista = e.Barista,
                                 FullName = e.Customer.FullName,
                                 TotalPrice = e.TotalPrice,
                                 Created = e.Created,
-                                Edited = e.Edited
-                            }).ToList()
+                                Edited = e.Edited,
+                                Menus = e.Menus,
+                                Additions = e.Additions
+                            }).ToList(),
+                            
                         };
             }
         }

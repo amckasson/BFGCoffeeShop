@@ -18,7 +18,7 @@ namespace BFGCoffeeShop.Services
             {
                 Created = DateTimeOffset.Now,
                 Barista = model.Barista,
-                CustomerId = model.CustomerId,
+               // CustomerId = model.CustomerId,
                 Country = model.Country,
                 CoffeeShopId = model.CoffeeShopId
             };
@@ -37,7 +37,7 @@ namespace BFGCoffeeShop.Services
                 var query = ctx.CoffeeOrders.Select(e => new CoffeeOrderListItem()
                 {
                     CoffeeOrderId = e.CoffeeOrderId,
-                    CustomerId = e.CustomerId,
+                    //CustomerId = e.CustomerId,
                     Created = e.Created,
                 });
                 return query.ToList();
@@ -54,13 +54,30 @@ namespace BFGCoffeeShop.Services
                     new CoffeeOrderDetail()
                     {
                         CoffeeOrderId = entity.CoffeeOrderId,
-                        CustomerId = entity.CustomerId,
-                        FullName = entity.Customer.FullName,
+                        //CustomerId = entity.CustomerId,
+                        FullName = entity.FullName,
                         Country = entity.Country,
                         Barista = entity.Barista,
                         TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
-                        Edited = entity.Edited
+                        Edited = entity.Edited,
+                        Customer = entity.Customer,
+
+                        
+                        Additions = entity.Additions.Select(e => new Addition()
+                        {
+                            AdditionId = e.AdditionId,
+                            Name = e.Name,
+                            Price = e.Price,
+
+                        }).ToList(),
+
+                        Menus = entity.Menus.Select(e => new Menu()
+                        {
+                            ItemName = e.ItemName,
+                            MenuId = e.MenuId,
+                            ItemPrice = e.ItemPrice
+                        }).ToList()
                     };
             }
         }

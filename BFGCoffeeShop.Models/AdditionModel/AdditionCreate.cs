@@ -16,7 +16,7 @@ namespace BFGCoffeeShop.Models.AdditionModels
         [Required]
         public decimal Price { get; set; }
 
-        public int CustomerId { get; set; }
+        public int CoffeeOrderId{ get; set; }
         //public virtual Customer Customer { get; set; }
 
     }

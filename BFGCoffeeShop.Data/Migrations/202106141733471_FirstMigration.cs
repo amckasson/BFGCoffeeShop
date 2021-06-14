@@ -16,30 +16,31 @@ namespace BFGCoffeeShop.Data.Migrations
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         CustomerId = c.Int(nullable: false),
+                        CoffeeOrderId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AdditionId)
-                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
-                .Index(t => t.CustomerId);
+                .ForeignKey("dbo.CoffeeOrder", t => t.CoffeeOrderId, cascadeDelete: true)
+                .Index(t => t.CoffeeOrderId);
             
             CreateTable(
                 "dbo.CoffeeOrder",
                 c => new
                     {
                         CoffeeOrderId = c.Int(nullable: false, identity: true),
-                        CoffeeShopId = c.Int(nullable: false),
                         FullName = c.String(),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
                         Edited = c.DateTimeOffset(precision: 7),
                         Country = c.String(),
                         TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Barista = c.String(),
-                        CustomerId = c.Int(nullable: false),
+                        CoffeeShopId = c.Int(nullable: false),
+                        Customer_CustomerId = c.Int(),
                     })
                 .PrimaryKey(t => t.CoffeeOrderId)
-                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.Customer", t => t.Customer_CustomerId)
                 .ForeignKey("dbo.CoffeeShop", t => t.CoffeeShopId, cascadeDelete: true)
                 .Index(t => t.CoffeeShopId)
-                .Index(t => t.CustomerId);
+                .Index(t => t.Customer_CustomerId);
             
             CreateTable(
                 "dbo.Customer",
@@ -63,10 +64,13 @@ namespace BFGCoffeeShop.Data.Migrations
                         TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ItemPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         CustomerId = c.Int(nullable: false),
+                        CoffeeOrderId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.MenuId)
                 .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
-                .Index(t => t.CustomerId);
+                .ForeignKey("dbo.CoffeeOrder", t => t.CoffeeOrderId, cascadeDelete: true)
+                .Index(t => t.CustomerId)
+                .Index(t => t.CoffeeOrderId);
             
             CreateTable(
                 "dbo.CoffeeShop",
@@ -77,6 +81,7 @@ namespace BFGCoffeeShop.Data.Migrations
                         Location = c.String(),
                         PhoneNumber = c.String(),
                         Website = c.String(),
+                        CoffeeOrderId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.CoffeeShopId);
             
@@ -159,17 +164,19 @@ namespace BFGCoffeeShop.Data.Migrations
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.CoffeeOrder", "CoffeeShopId", "dbo.CoffeeShop");
-            DropForeignKey("dbo.CoffeeOrder", "CustomerId", "dbo.Customer");
+            DropForeignKey("dbo.Menu", "CoffeeOrderId", "dbo.CoffeeOrder");
             DropForeignKey("dbo.Menu", "CustomerId", "dbo.Customer");
-            DropForeignKey("dbo.Addition", "CustomerId", "dbo.Customer");
+            DropForeignKey("dbo.CoffeeOrder", "Customer_CustomerId", "dbo.Customer");
+            DropForeignKey("dbo.Addition", "CoffeeOrderId", "dbo.CoffeeOrder");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Menu", new[] { "CoffeeOrderId" });
             DropIndex("dbo.Menu", new[] { "CustomerId" });
-            DropIndex("dbo.CoffeeOrder", new[] { "CustomerId" });
+            DropIndex("dbo.CoffeeOrder", new[] { "Customer_CustomerId" });
             DropIndex("dbo.CoffeeOrder", new[] { "CoffeeShopId" });
-            DropIndex("dbo.Addition", new[] { "CustomerId" });
+            DropIndex("dbo.Addition", new[] { "CoffeeOrderId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");

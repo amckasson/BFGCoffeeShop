@@ -17,10 +17,15 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public string Country { get; set; }
         public string Barista { get; set; }
         public decimal TotalPrice { get; set; }
-        [ForeignKey("Customer")]
+        //[ForeignKey("Customer")]
         public int CustomerId { get; set; }
 
+        public virtual List<Menu> Menus { get; set; }
+
+        //public int AdditionId { get; set; }
+        public virtual List<Addition> Additions { get; set; }
+
         //public int CoffeeShopId { get; set; }
-       //public virtual Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

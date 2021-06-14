@@ -18,7 +18,7 @@ namespace BFGCoffeeShop.Services
                 {
                     Name = create.Name,
                     Price = create.Price,
-                    CustomerId = create.CustomerId,
+                    CoffeeOrderId = create.CoffeeOrderId
                 };
 
             using (var ctx = new ApplicationDbContext())

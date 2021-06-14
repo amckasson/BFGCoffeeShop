@@ -18,7 +18,7 @@ namespace BFGCoffeeShop.Services
                 {
                     ItemName = model.ItemName,
                     ItemPrice = model.ItemPrice,
-                    CustomerId = model.CustomerId, 
+                    CoffeeOrderId = model.CoffeeOrderId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -34,7 +34,7 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                         .Menus
-                        .Where(e => e.Customer.CustomerId == e.CustomerId)
+                        //.Where(e => e.Customer.CustomerId == e.CustomerId)
                         .Select(
                             e =>
                                 new MenuListItem

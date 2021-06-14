@@ -17,12 +17,13 @@ namespace BFGCoffeeShop.Data
 
         public decimal TotalPrice { get; set; }
 
-        //public List<string> MenuList { get; set; }
 
         [Required]
         public decimal ItemPrice { get; set; }
 
-        public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+        //public int CustomerId { get; set; }
+        //public virtual Customer Customer { get; set; }
+
+        public int CoffeeOrderId { get; set; }
     }
 }
