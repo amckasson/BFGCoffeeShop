@@ -35,7 +35,6 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                     .Additions
-                    //.Where(e => e.CustomerId == e.Customer.CustomerId)
                     .Select(
                         e =>
                         new AdditionItemList

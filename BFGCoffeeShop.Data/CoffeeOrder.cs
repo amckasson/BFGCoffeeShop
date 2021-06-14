@@ -12,7 +12,6 @@ namespace BFGCoffeeShop.Data
     {
         [Key]
         public int CoffeeOrderId { get; set; }
-        public string FullName { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Edited { get; set; }
         public string Country { get; set; }
@@ -20,8 +19,6 @@ namespace BFGCoffeeShop.Data
         public string Barista { get; set; }
         public int CoffeeShopId { get; set; }
 
-        //[ForeignKey("Customer")]
-       // public int CustomerId { get; set; }
         public virtual List<Customer> Customer { get; set; }
 
         public virtual List<Addition> Additions { get; set; }

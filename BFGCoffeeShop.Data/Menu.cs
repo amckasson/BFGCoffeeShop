@@ -15,14 +15,8 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string ItemName { get; set; }
 
-        public decimal TotalPrice { get; set; }
-
-
         [Required]
         public decimal ItemPrice { get; set; }
-
-        //public int CustomerId { get; set; }
-        //public virtual Customer Customer { get; set; }
 
         public int CoffeeOrderId { get; set; }
     }

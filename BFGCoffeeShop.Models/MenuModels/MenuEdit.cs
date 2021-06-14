@@ -9,7 +9,6 @@ namespace BFGCoffeeShop.Models.MenuModels
     public class MenuEdit
     {
         public int MenuId { get; set; }
-        public int CustomerId { get; set; }
 
         public string ItemName { get; set; }
 

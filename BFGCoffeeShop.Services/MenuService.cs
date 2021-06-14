@@ -34,7 +34,6 @@ namespace BFGCoffeeShop.Services
                 var query =
                     ctx
                         .Menus
-                        //.Where(e => e.Customer.CustomerId == e.CustomerId)
                         .Select(
                             e =>
                                 new MenuListItem
@@ -61,7 +60,7 @@ namespace BFGCoffeeShop.Services
                     {
                         MenuId = entity.MenuId,
                         ItemName = entity.ItemName,
-                        ItemPrice = entity.ItemPrice
+                        ItemPrice = entity.ItemPrice,
                     };
             }
         }

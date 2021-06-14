@@ -70,12 +70,8 @@ namespace BFGCoffeeShop.Services
                             Website = entity.Website,
                             CoffeeOrders = entity.CoffeeOrder.Select(e => new CoffeeOrderDetail()
                             {
-                                CoffeeOrderId = e.CoffeeOrderId,
-                                //CustomerId = e.CustomerId,
                                 Country = e.Country,
                                 Barista = e.Barista,
-                                //FullName = e.Customer.FullName,
-                                TotalPrice = e.TotalPrice,
                                 Created = e.Created,
                                 Edited = e.Edited,
                                 Menus = e.Menus,

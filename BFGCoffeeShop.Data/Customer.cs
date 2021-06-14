@@ -22,15 +22,10 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string LastName { get; set; }
 
-        //public string FullName => FirstName + " " + LastName;
 
         [Required]
         public string PaymentType { get; set; }
-        //public int MenuId { get; set; }
-        //public virtual List<Menu> Menu { get; set; }
 
-        //public int? AdditionId { get; set; }
-        //public virtual List<Addition> Addition { get; set; }
 
         public int CoffeeOrderId { get; set; }
         //public List<FavoriteOrder> FavoriteOrders { get; set; } stretch goal

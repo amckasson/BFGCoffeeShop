@@ -17,17 +17,8 @@ namespace BFGCoffeeShop.Models.CustomerModels
         [Required]
         public string LastName { get; set; }
 
-        //public string FullName { get; set; }
-
         [Required]
         public string PaymentType { get; set; }
 
-        public int CoffeeOrder { get; set; }
-        //public int MenuId { get; set; }
-        //public virtual List<Menu> Menus { get; set; }
-
-        //public int AdditionId { get; set; }
-        //public virtual List<Addition> Additions { get; set; }
-        //public List<FavoriteOrder> FavoriteOrders { get; set; }
     }
 }
