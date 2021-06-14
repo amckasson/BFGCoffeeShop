@@ -17,6 +17,8 @@ namespace BFGCoffeeShop.Models.CustomerModels
         [Required]
         public string LastName { get; set; }
 
+        //public string FullName { get; set; }
+
         [Required]
         public string PaymentType { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using BFGCoffeeShop.Data;
 using BFGCoffeeShop.Models.AdditionModels;
 using BFGCoffeeShop.Models.CoffeeOrderModels;
+using BFGCoffeeShop.Models.CustomerModels;
 using BFGCoffeeShop.Models.MenuModels;
 using System;
 using System.Collections.Generic;
@@ -61,9 +62,16 @@ namespace BFGCoffeeShop.Services
                         TotalPrice = entity.TotalPrice,
                         Created = entity.Created,
                         Edited = entity.Edited,
-                        Customer = entity.Customer,
 
-                        
+                        Customer = entity.Customer.Select(e => new Customer()
+                        {
+                            CustomerId = e.CustomerId,
+                            FirstName = e.FirstName,
+                            LastName = e.LastName,
+                            PaymentType = e.PaymentType,
+                        }).ToList(),
+
+
                         Additions = entity.Additions.Select(e => new Addition()
                         {
                             AdditionId = e.AdditionId,

@@ -17,5 +17,6 @@ namespace BFGCoffeeShop.Models.CustomerModels
 
         [Required]
         public string PaymentType { get; set; }
+        public int CoffeeOrderId { get; set; }
     }
 }

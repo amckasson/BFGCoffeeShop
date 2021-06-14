@@ -25,6 +25,7 @@ namespace BFGCoffeeShop.Services
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     PaymentType = model.PaymentType,
+                    CoffeeOrderId = model.CoffeeOrderId
                 };
 
             using (var ctx = new ApplicationDbContext())

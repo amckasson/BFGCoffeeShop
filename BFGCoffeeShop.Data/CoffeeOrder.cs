@@ -22,7 +22,7 @@ namespace BFGCoffeeShop.Data
 
         //[ForeignKey("Customer")]
        // public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+        public virtual List<Customer> Customer { get; set; }
 
         public virtual List<Addition> Additions { get; set; }
 

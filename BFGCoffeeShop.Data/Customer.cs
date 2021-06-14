@@ -22,7 +22,7 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string LastName { get; set; }
 
-        public string FullName => FirstName + " " + LastName;
+        //public string FullName => FirstName + " " + LastName;
 
         [Required]
         public string PaymentType { get; set; }

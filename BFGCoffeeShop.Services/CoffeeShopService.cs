@@ -74,12 +74,13 @@ namespace BFGCoffeeShop.Services
                                 //CustomerId = e.CustomerId,
                                 Country = e.Country,
                                 Barista = e.Barista,
-                                FullName = e.Customer.FullName,
+                                //FullName = e.Customer.FullName,
                                 TotalPrice = e.TotalPrice,
                                 Created = e.Created,
                                 Edited = e.Edited,
                                 Menus = e.Menus,
-                                Additions = e.Additions
+                                Additions = e.Additions,
+                                Customer = e.Customer
                             }).ToList(),
                             
                         };

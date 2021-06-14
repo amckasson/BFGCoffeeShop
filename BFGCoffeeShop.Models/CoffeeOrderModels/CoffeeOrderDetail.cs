@@ -26,6 +26,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
         public virtual List<Addition> Additions { get; set; }
 
         //public int CoffeeShopId { get; set; }
-        public virtual Customer Customer { get; set; }
+        public virtual List<Customer> Customer { get; set; }
     }
 }
