@@ -19,5 +19,6 @@ namespace BFGCoffeeShop.Data
         public decimal ItemPrice { get; set; }
 
         public int CoffeeOrderId { get; set; }
+        public int CoffeeShopId { get; set; }
     }
 }
