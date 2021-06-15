@@ -1,6 +1,7 @@
 ﻿using BFGCoffeeShop.Data;
 using BFGCoffeeShop.Models.CoffeeOrderModels;
 using BFGCoffeeShop.Models.CoffeeShopModels;
+using BFGCoffeeShop.Models.MenuModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,7 +79,11 @@ namespace BFGCoffeeShop.Services
                                 Additions = e.Additions,
                                 Customer = e.Customer
                             }).ToList(),
-                            
+                            Menu = entity.Menu.Select(e => new MenuDetail()
+                            {
+                                ItemName = e.ItemName,
+                                ItemPrice = e.ItemPrice
+                            }).ToList(),
                         };
             }
         }

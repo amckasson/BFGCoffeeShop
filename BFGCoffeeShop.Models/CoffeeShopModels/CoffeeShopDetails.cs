@@ -1,5 +1,6 @@
 ﻿using BFGCoffeeShop.Data;
 using BFGCoffeeShop.Models.CoffeeOrderModels;
+using BFGCoffeeShop.Models.MenuModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,6 @@ namespace BFGCoffeeShop.Models.CoffeeShopModels
 
         public string Website { get; set; }
         public List<CoffeeOrderDetail> CoffeeOrders { get; set; }
+        public virtual List<MenuDetail> Menu { get; set; }
     }
 }

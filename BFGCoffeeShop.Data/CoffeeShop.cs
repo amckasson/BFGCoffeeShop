@@ -24,7 +24,7 @@ namespace BFGCoffeeShop.Data
         public int CoffeeOrderId { get; set; }
         public virtual List<CoffeeOrder> CoffeeOrder { get; set; }
 
-        public int MenuId { get; set; }
+       // public int MenuId { get; set; }
         public virtual List<Menu> Menu { get; set; } = new List<Menu>();
     }
 }
