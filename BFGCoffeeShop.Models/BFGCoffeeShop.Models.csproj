@@ -54,11 +54,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeOrderModels\CoffeeOrderCreate.cs" />
+    <Compile Include="CoffeeOrderModels\CoffeeOrderDetail.cs" />
+    <Compile Include="CoffeeOrderModels\CoffeeOrderEdit.cs" />
+    <Compile Include="CoffeeOrderModels\CoffeeOrderListItem.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopCreate.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopDetails.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopEdit.cs" />
+    <Compile Include="CoffeeShopModels\CoffeeShopListItem.cs" />
+    <Compile Include="CustomerModels\CustomerCreate.cs" />
+    <Compile Include="CustomerModels\CustomerDetails.cs" />
+    <Compile Include="CustomerModels\CustomerEdit.cs" />
+    <Compile Include="CustomerModels\CustomerList.cs" />
+    <Compile Include="AdditionModel\AdditionCreate.cs" />
+    <Compile Include="AdditionModel\AdditionDetail.cs" />
+    <Compile Include="AdditionModel\AdditionEdit.cs" />
+    <Compile Include="AdditionModel\AdditionItemList.cs" />
+    <Compile Include="MenuModels\MenuCreate.cs" />
+    <Compile Include="MenuModels\MenuDetail.cs" />
+    <Compile Include="MenuModels\MenuEdit.cs" />
+    <Compile Include="MenuModels\MenuListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFGCoffeeShop.Data\BFGCoffeeShop.Data.csproj">
+      <Project>{3a563e97-4eca-4a38-ad88-b6726f7839f6}</Project>
+      <Name>BFGCoffeeShop.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
