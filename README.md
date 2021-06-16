@@ -1,8 +1,8 @@
 # **BFG Coffee Shop**
 
-## **User Stories**
+## **Purpose**
 
-**BFG Coffee Shop** is an web application that allows *Customers* to create, view, update and delete a *Coffee Order*. You may also add *Additions* to your coffee such as caramel drizzle or try one of our *Menu* items such a chocolate crossant.
+**BFG Coffee Shop** is an web application built out using *N-Tier Structure*. It allows *Users* to create, view, update and delete a *Coffee Shop*.  A *Cofee Order* can be created that details information about a *Customer*, you may also add *Additions* to your coffee such as caramel drizzle or try one of our *Menu* items such a chocolate crossant.
 
 </hr>
 
