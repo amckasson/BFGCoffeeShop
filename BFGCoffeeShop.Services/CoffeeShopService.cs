@@ -11,8 +11,6 @@ namespace BFGCoffeeShop.Services
 {
     public class CoffeeShopService
     {
-        private readonly Dictionary<int, string> _menuDirectory = new Dictionary<int, string>();
-    
         public bool CreateCoffeeShop(CoffeeShopCreate model)
         {
             var entity =
