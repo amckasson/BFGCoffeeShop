@@ -16,6 +16,10 @@
 
 </hr>
 
+## Postman Documentation
+
+Postman Documentation Link : https://www.postman.com/gold-capsule-51454/workspace/blue-badge/documentation/15917899-865c4492-3846-4e2c-a37e-417366622367
+
 ## Correct Order of Creation
 
 1. First, REGISTER an account through Postman
