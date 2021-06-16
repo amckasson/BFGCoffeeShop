@@ -43,6 +43,10 @@ Postman Documentation [Link](https://www.postman.com/gold-capsule-51454/workspac
 
 We used [Trello](https://trello.com/b/wPF8uvyh/bfg-coffee-final-project) to build out a board that easily allowed us to see what has been completed and what ticket tests we have yet to run.
 
+<br>
+
+We used [BD Diagram](https://dbdiagram.io/d/60be29d8b29a09603d185286) to build out a visual representation of our database.  It was a helpful tool getting a wireframe put together at the start of the project. 
+
 </hr>
 
 ## Creators
