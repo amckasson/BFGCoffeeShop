@@ -60,6 +60,7 @@ namespace BFGCoffeeShop.Services
 
                         Customer = entity.Customer.Select(e => new Customer()
                         {
+                            CoffeeOrderId = entity.CoffeeOrderId,
                             CustomerTag = e.CustomerTag,
                             CustomerId = e.CustomerId,
                             FirstName = e.FirstName,
@@ -70,6 +71,7 @@ namespace BFGCoffeeShop.Services
 
                         Additions = entity.Additions.Select(e => new Addition()
                         {
+                            CoffeeOrderId = entity.CoffeeOrderId,
                             AdditionId = e.AdditionId,
                             Name = e.Name,
                             Price = e.Price,
@@ -78,6 +80,7 @@ namespace BFGCoffeeShop.Services
 
                         Menus = entity.Menus.Select(e => new Menu()
                         {
+                            CoffeeOrderId = entity.CoffeeOrderId,
                             ItemName = e.ItemName,
                             MenuId = e.MenuId,
                             ItemPrice = e.ItemPrice
