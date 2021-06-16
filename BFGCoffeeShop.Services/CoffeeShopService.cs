@@ -89,7 +89,7 @@ namespace BFGCoffeeShop.Services
             {
                 var entity = ctx
                     .CoffeeShops
-                    .Single(e => e.CoffeeShopId == e.CoffeeShopId);
+                    .Single(e => e.CoffeeShopId == model.CoffeeShopId);
 
                 entity.CoffeeShopId = model.CoffeeShopId;
                 entity.ShopName = model.ShopName;
