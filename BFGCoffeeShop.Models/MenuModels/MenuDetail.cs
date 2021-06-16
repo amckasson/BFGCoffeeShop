@@ -9,7 +9,9 @@ namespace BFGCoffeeShop.Models.MenuModels
     public class MenuDetail
     {
         public int MenuId { get; set; }
+        public int CoffeeOrderId { get; set; }
         public string ItemName { get; set; }
         public decimal ItemPrice { get; set; }
+        
     }
 }

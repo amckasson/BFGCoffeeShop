@@ -40,7 +40,7 @@ namespace BFGCoffeeShop.Services
                                 {
                                     MenuId = e.MenuId,
                                     ItemName = e.ItemName,
-                                    Price = e.ItemPrice
+                                    Price = e.ItemPrice,
                                 }
                         );
                 return query.ToArray();
@@ -59,8 +59,9 @@ namespace BFGCoffeeShop.Services
                     new MenuDetail
                     {
                         MenuId = entity.MenuId,
+                        CoffeeOrderId = entity.CoffeeOrderId,
                         ItemName = entity.ItemName,
-                        ItemPrice = entity.ItemPrice,
+                        ItemPrice = entity.ItemPrice
                     };
             }
         }
