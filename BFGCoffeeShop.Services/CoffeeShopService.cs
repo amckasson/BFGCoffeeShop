@@ -70,6 +70,7 @@ namespace BFGCoffeeShop.Services
                             Website = entity.Website,
                             CoffeeOrders = entity.CoffeeOrder.Select(e => new CoffeeOrderDetail()
                             {
+                                CoffeeOrderId = e.CoffeeOrderId,
                                 Country = e.Country,
                                 Barista = e.Barista,
                                 Created = e.Created,
