@@ -11,7 +11,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
     public class CoffeeOrderDetail
     {
         public int CoffeeOrderId { get; set; }
-        public string FullName { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Edited { get; set; }
         public string Country { get; set; }
