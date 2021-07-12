@@ -38,6 +38,7 @@ namespace BFGCoffeeShop.Services
                 {
                     CoffeeOrderId = e.CoffeeOrderId,
                     Created = e.Created,
+                    Custmer = e.Customer
                 });
                 return query.ToList();
             }
@@ -57,18 +58,8 @@ namespace BFGCoffeeShop.Services
                         Barista = entity.Barista,
                         Created = entity.Created,
                         Edited = entity.Edited,
-
-                        Customer = entity.Customer.Select(e => new Customer()
-                        {
-                            CoffeeOrderId = entity.CoffeeOrderId,
-                            CustomerTag = e.CustomerTag,
-                            CustomerId = e.CustomerId,
-                            FirstName = e.FirstName,
-                            LastName = e.LastName,
-                            PaymentType = e.PaymentType,
-                        }).ToList(),
-
-
+                        Customer = entity.Customer,
+                       
                         Additions = entity.Additions.Select(e => new Addition()
                         {
                             CoffeeOrderId = entity.CoffeeOrderId,

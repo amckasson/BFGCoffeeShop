@@ -10,7 +10,6 @@ namespace BFGCoffeeShop.Data
 {
     public class Customer
     {
-        [Key]
         public int CustomerId { get; set; }
 
         [Required]
@@ -22,12 +21,11 @@ namespace BFGCoffeeShop.Data
         [Required]
         public string LastName { get; set; }
 
-
         [Required]
         public string PaymentType { get; set; }
 
-
         public int CoffeeOrderId { get; set; }
+        //public virtual CoffeeOrder CoffeeOrder { get; set; }
         //public List<FavoriteOrder> FavoriteOrders { get; set; } stretch goal
     }
 }

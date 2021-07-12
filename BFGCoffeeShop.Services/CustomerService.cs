@@ -49,7 +49,7 @@ namespace BFGCoffeeShop.Services
                             CustomerId = e.CustomerId,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
-                            PaymentType = e.PaymentType,
+                            PaymentType = e.PaymentType
                         }
                     );
                 return query.ToArray();
@@ -62,7 +62,7 @@ namespace BFGCoffeeShop.Services
                 var entity =
                     ctx
                     .Customers
-                    .Single(e => e.CustomerId == id);
+                    .Single(e => e.CustomerId == id & e.CustomerTag == _userId);
 
                 return new CustomerDetails() {
                     CustomerId = entity.CustomerId, 
@@ -81,7 +81,7 @@ namespace BFGCoffeeShop.Services
             {
                 var entity = ctx
                     .Customers
-                    .Single(e => e.CustomerTag == _userId);
+                    .Single(e => e.CustomerTag == _userId & e.CustomerTag == _userId);
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;

@@ -11,5 +11,6 @@ namespace BFGCoffeeShop.Models.CoffeeOrderModels
     {
         public int CoffeeOrderId { get; set; }
         public DateTimeOffset Created { get; set; }
+        public Customer Custmer { get; set; }
     }
 }

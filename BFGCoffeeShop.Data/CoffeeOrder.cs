@@ -19,7 +19,7 @@ namespace BFGCoffeeShop.Data
         public string Barista { get; set; }
         public int CoffeeShopId { get; set; }
 
-        public virtual List<Customer> Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         public virtual List<Addition> Additions { get; set; }
 

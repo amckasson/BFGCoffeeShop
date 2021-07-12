@@ -13,7 +13,7 @@ namespace BFGCoffeeShop.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202106141930146_FirstMigration"; }
+            get { return "202106200416307_FirstMigration"; }
         }
         
         string IMigrationMetadata.Source
